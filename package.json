@@ -5,20 +5,29 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
     "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YulethAceves/tech-blog.git"
+    "url": "git+https://github.com/kara-krzystan/tech-blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YulethAceves/tech-blog/issues"
+    "url": "https://github.com/kara-krzystan/tech-blog/issues"
   },
-  "homepage": "https://github.com/YulethAceves/tech-blog#readme",
+  "homepage": "https://github.com/kara-krzystan/tech-blog#readme",
   "dependencies": {
-    "inquirer": "^9.2.8"
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "express-session": "^1.17.1",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2",
+    "start": "^5.1.0"
   }
 }

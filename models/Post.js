@@ -2,35 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Post extends Model {
-    static upvote(body, models) {
-        return models.Vote.create({
-            user_id: body.user_id,
-            post_id: body.post_id
-        }).then(() => {
-            return Post.findOne({
-                where: {
-                    id: body.post_id
-                },
-                attributes: [
-                    'id',
-                    'post_content',
-                    'title',
-                    'created_at',
-                ],
-                include: [
-                    {
-                        model: models.Comment,
-                        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                        include: {
-                            model: models.User,
-                            attributes: ['username']
-                        }
-                    }
-                ]
-            });
-        });
-    }
-}
 
 Post.init(
     {
@@ -45,7 +16,7 @@ Post.init(
             allowNull: false
         },
         post_content: {
-            type: DataTypes.STRING(500),
+            type: DataTypes.STRING(750),
             allowNull: false,
             validate: {
                 len: [1]
